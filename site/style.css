@@ -1,0 +1,283 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Fonte padrão para leitura e botões */
+}
+
+body {
+    background-color: #FFE5EC; /* Fundo degradê romântico clean e moderno */
+    background-image: linear-gradient(135deg, #FFE5EC 0%, #FFC2D1 50%, #F7A1C4 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; 
+    padding: 20px;
+    position: relative;
+}
+
+/* Container da Animação de Chuva de Emojis */
+#chuva-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+    z-index: 1;
+}
+
+.emoji-queda {
+    position: absolute;
+    top: -50px;
+    font-size: 2rem;
+    animation: cair linear forwards;
+    user-select: none;
+}
+
+@keyframes cair {
+    to {
+        transform: translateY(105vh) rotate(360deg);
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    z-index: 10; 
+}
+
+/* Configurações Românticas do Card */
+.card {
+    background-color: #FFFFFF; 
+    border: none;
+    border-radius: 30px;
+    padding: 40px 24px;
+    text-align: center;
+    color: #2B061E; /* Texto em tom amora bem escuro para leitura perfeita */
+    box-shadow: 0 20px 40px rgba(219, 34, 87, 0.15);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.card.active {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.meme-container {
+    width: 130px;
+    height: 130px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.meme-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* Títulos com fonte elegante "Playfair Display" */
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 25px;
+    line-height: 1.35;
+    color: #470024;
+}
+
+.btn-group {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+    min-height: 60px;
+    align-items: center;
+}
+
+.btn {
+    padding: 14px 40px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.btn-sim {
+    background-color: #FF2A65; /* Vermelho magenta vibrante e apaixonado */
+    color: #FFFFFF;
+    box-shadow: 0 6px 20px rgba(255, 42, 101, 0.35);
+}
+
+.btn-sim:active {
+    transform: scale(0.96);
+}
+
+.btn-nao {
+    background-color: #FFF0F3;
+    color: #FF2A65;
+    border: 2px solid #FFCCD5;
+}
+
+/* Estilo do botão fugitivo quando provocado */
+.btn-nao.fugitivo {
+    position: fixed;
+    z-index: 999;
+    background-color: #E6003A;
+    color: white;
+    border: none;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    transition: top 0.1s ease, left 0.1s ease;
+}
+
+.btn-proximo {
+    background-color: #FF2A65;
+    color: #FFFFFF;
+    width: 100%;
+    margin-top: 15px;
+    box-shadow: 0 6px 20px rgba(255, 42, 101, 0.3);
+}
+
+.btn-proximo.disabled {
+    background-color: #FFF0F3;
+    color: #FFB3C1;
+    cursor: not-allowed;
+    box-shadow: none;
+    border: 1px solid #FFE3E8;
+}
+
+.input-group {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+    color: #A34875;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+input[type="date"], input[type="time"] {
+    width: 100%;
+    padding: 14px;
+    border-radius: 16px;
+    border: 2px solid #FFE3E8;
+    background-color: #FFF9FA;
+    color: #2B061E;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    transition: border-color 0.2s;
+}
+
+input[type="date"]:focus, input[type="time"]:focus {
+    border-color: #FF2A65;
+    outline: none;
+}
+
+.sub-instrucao {
+    font-size: 0.85rem;
+    color: #A34875;
+    margin-top: -15px;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.opcoes-grid {
+    display: flex;
+    flex-direction: column; /* Lista vertical fica esteticamente muito mais bonita no telemóvel */
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.opcao-card {
+    background-color: #FFF9FA;
+    border: 2px solid #FFE3E8;
+    border-radius: 16px;
+    padding: 16px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #470024;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.opcao-card.selected {
+    background-color: #FF2A65;
+    color: #FFFFFF;
+    border-color: #FF2A65;
+    transform: translateX(4px); /* Pequeno efeito de deslize ao selecionar */
+}
+
+.titulo-sucesso {
+    color: #FF2A65;
+    margin-bottom: 5px;
+}
+
+.sub-sucesso {
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+    color: #A34875;
+    font-weight: 500;
+}
+
+.resumo-box {
+    background-color: #FFF9FA;
+    border: 2px dashed #FF2A65;
+    border-radius: 20px;
+    padding: 22px;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.resumo-box p {
+    font-size: 1rem;
+    margin-bottom: 12px;
+    color: #2B061E;
+    font-weight: 500;
+}
+
+.resumo-box p:last-child {
+    margin-bottom: 0;
+}
+
+.resumo-box span {
+    font-weight: 700;
+    color: #FF2A65;
+}
+
+.frase-final {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #FF2A65;
+    font-size: 1.2rem;
+    font-weight: 600;
+}

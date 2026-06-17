@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Um Convite Irrecusável </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="chuva-container"></div>
+
+    <div class="container">
+        <div id="tela1" class="card active">
+            <div class="meme-container">
+                <img src="foto1.jpg" alt="Meme Romântico 1" class="meme-img">
+            </div>
+            
+            <h2 id="titulo-convite">ta afim de chutar mendigo (sair em um date) comigo?</h2>
+            
+            <div class="btn-group">
+                <button id="btn-sim" class="btn btn-sim">SIM</button>
+                <button id="btn-nao" class="btn btn-nao">NÃO</button>
+            </div>
+        </div>
+
+        <div id="tela2" class="card">
+            <div class="meme-container">
+                <img src="foto2.jpg" alt="Meme Calendário" class="meme-img">
+            </div>
+            <h2>Que dia a madame vai estar livre? </h2>
+            
+            <div class="input-group">
+                <label for="data-date">Escolha a data:</label>
+                <input type="date" id="data-date" required>
+            </div>
+
+            <div class="input-group">
+                <label for="hora-date">Escolha o horário:</label>
+                <input type="time" id="hora-date" value="19:00" required>
+            </div>
+
+            <button id="btn-avancar-data" class="btn btn-proximo">PRÓXIMO ➔</button>
+        </div>
+
+        <div id="tela3" class="card">
+            <h2>Pra onde? 🤔</h2>
+            <p class="sub-instrucao">Escolha o lugar perfeito:</p>
+            
+            <div class="opcoes-grid">
+                <div class="opcao-card" data-local="Cinema"> Cinema</div>
+                <div class="opcao-card" data-local="Shopping"> Shopping</div>
+                <div class="opcao-card" data-local="Praça de alimentação"> Praça de alimentação</div>
+                <div class="opcao-card" data-local="Sorveteria"> Sorveteria</div>
+                <div class="opcao-card" data-local="Sua casa (assistir filme)"> Minha casa (assistir filme)</div>
+            </div>
+
+            <button id="btn-avancar-local" class="btn btn-proximo disabled" disabled>TUDO PRONTO ➔</button>
+        </div>
+
+        <div id="tela4" class="card">
+            <div class="meme-container">
+                <img src="foto3.jpg" alt="Meme Sucesso" class="meme-img">
+            </div>
+            <h2 class="titulo-sucesso"> Deu match</h2>
+            <p class="sub-sucesso"> Carniça doida</p>
+            
+            <div class="resumo-box">
+                <p>📅 Data: <span id="resumo-data">--/--/----</span></p>
+                <p>⏰ Hora: <span id="resumo-hora">--:--</span></p>
+                <p>📍 Destino: <span id="resumo-local">Não selecionado</span></p>
+            </div>
+            
+            <p class="frase-final">Me avisa no WhatsApp! ✨</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
